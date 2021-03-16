@@ -91,8 +91,8 @@ dispatch(userError(error.message))
 
 const store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
-const store.ncsubscribe(() => {console.log(store.getState())});
+const unsubscribe = store.ncsubscribe(() => {console.log(store.getState())});
 
 store.dispatch(fetchUsers());
-
+//unsubscribe();
 
